@@ -2,8 +2,8 @@
 # These are the assumed default build requirements from pip:
 # https://pip.pypa.io/en/stable/reference/pip/#pep-517-and-518-support
 requires = [
-    "setuptools>=77",
-    "setuptools-git-versioning<2",
+    "setuptools>=80",
+    "setuptools-scm>=8",
     "wheel",
 ]
 build-backend = "setuptools.build_meta"
@@ -122,6 +122,3 @@ docstring-code-format = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
-[tool.setuptools-git-versioning]
-enabled = true

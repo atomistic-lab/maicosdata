@@ -7,7 +7,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 """maicosdata repository."""
 
-
 __authors__ = "MAICoS Developer Team"
 
 from . import datasets

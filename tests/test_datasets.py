@@ -4,7 +4,7 @@ import MDAnalysis as mda
 import pytest
 
 from maicosdata import datasets
-from maicosdata.datasets import Record, _DATA_DIR, _REGISTRY
+from maicosdata.datasets import _DATA_DIR, _REGISTRY, Record
 
 # ---------------------------------------------------------------------------
 # Expected identifiers (update when new datasets are added)
@@ -19,15 +19,9 @@ EXPECTED_IDENTIFIERS = [
     "water",
 ]
 
-IDS_WITH_TRAJECTORY = [
-    k for k, v in _REGISTRY.items() if v.trajectory is not None
-]
-IDS_WITHOUT_TRAJECTORY = [
-    k for k, v in _REGISTRY.items() if v.trajectory is None
-]
-IDS_WITH_README = [
-    k for k in _REGISTRY if (_DATA_DIR / k / "README.rst").exists()
-]
+IDS_WITH_TRAJECTORY = [k for k, v in _REGISTRY.items() if v.trajectory is not None]
+IDS_WITHOUT_TRAJECTORY = [k for k, v in _REGISTRY.items() if v.trajectory is None]
+IDS_WITH_README = [k for k in _REGISTRY if (_DATA_DIR / k / "README.rst").exists()]
 IDS_WITHOUT_README = [
     k for k in _REGISTRY if not (_DATA_DIR / k / "README.rst").exists()
 ]
@@ -74,17 +68,13 @@ class TestRegistry:
     def test_topology_file_exists(self, identifier):
         """Every registered topology file must exist on disk."""
         record = _REGISTRY[identifier]
-        assert record.topology.exists(), (
-            f"Topology missing: {record.topology}"
-        )
+        assert record.topology.exists(), f"Topology missing: {record.topology}"
 
     @pytest.mark.parametrize("identifier", IDS_WITH_TRAJECTORY)
     def test_trajectory_file_exists(self, identifier):
         """Every registered trajectory file must exist on disk."""
         record = _REGISTRY[identifier]
-        assert record.trajectory.exists(), (
-            f"Trajectory missing: {record.trajectory}"
-        )
+        assert record.trajectory.exists(), f"Trajectory missing: {record.trajectory}"
 
 
 # ===== list_identifiers ====================================================
@@ -238,13 +228,13 @@ class TestTopLevelImports:
         assert callable(list_identifiers)
 
     def test_import_describe(self):
-        """describe must be importable from maicosdata."""
+        """Describe must be importable from maicosdata."""
         from maicosdata import describe
 
         assert callable(describe)
 
     def test_import_fetch(self):
-        """fetch must be importable from maicosdata."""
+        """Fetch must be importable from maicosdata."""
         from maicosdata import fetch
 
         assert callable(fetch)

@@ -67,10 +67,7 @@ def _validate_identifier(identifier: str) -> None:
     """
     if identifier not in _REGISTRY:
         available = ", ".join(sorted(_REGISTRY))
-        msg = (
-            f"Unknown identifier {identifier!r}. "
-            f"Available identifiers: {available}"
-        )
+        msg = f"Unknown identifier {identifier!r}. Available identifiers: {available}"
         raise ValueError(msg)
 
 
@@ -116,7 +113,7 @@ def describe(identifier: str) -> str:
     Examples
     --------
     >>> from maicosdata import datasets
-    >>> print(datasets.describe("water"))       # doctest: +SKIP
+    >>> print(datasets.describe("water"))  # doctest: +SKIP
     Water data
     ==========
     ...
@@ -179,7 +176,7 @@ def fetch(identifier: str, **universe_kwargs) -> mda.Universe:
     --------
     >>> from maicosdata import datasets
     >>> u = datasets.fetch("water", in_memory=True)  # doctest: +SKIP
-    >>> u.atoms.n_atoms                               # doctest: +SKIP
+    >>> u.atoms.n_atoms  # doctest: +SKIP
     1530
     """
     record = _get_record(identifier)
