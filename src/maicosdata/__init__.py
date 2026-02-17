@@ -9,5 +9,7 @@
 
 __authors__ = "MAICoS Developer Team"
 
-from . import datasets
-from .datasets import describe, fetch, list_identifiers
+from . import datasets as datasets
+from .datasets import describe as describe
+from .datasets import fetch as fetch
+from .datasets import list_identifiers as list_identifiers

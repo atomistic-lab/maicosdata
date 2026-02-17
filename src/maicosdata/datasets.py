@@ -82,8 +82,9 @@ def list_identifiers() -> list[str]:
     Examples
     --------
     >>> from maicosdata import datasets
-    >>> datasets.list_identifiers()
-    ['airwater', 'cntwater', 'kineticenergy', 'mica', 'salt_water', 'slit_flow', 'water']
+    >>> datasets.list_identifiers()  # doctest: +NORMALIZE_WHITESPACE
+    ['airwater', 'cntwater', 'kineticenergy', 'mica',
+     'salt_water', 'slit_flow', 'water']
     """
     return sorted(_REGISTRY)
 
