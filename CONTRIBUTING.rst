@@ -8,7 +8,7 @@ your requests.
 
 .. Explicitly link LATEST documentation for developers
 .. _`developer documentation` : https://maicos-analysis.org/latest/devdoc
-.. _`GitHub` : https://github.com/maicos-devel/maicos/
+.. _`GitHub` : https://github.com/atomistic-lab/maicos/
 
 By contributing to MAICoS, you accept and agree to the following terms and conditions
 for your present and future contributions submitted to MAICoS. Except for the license
@@ -45,7 +45,7 @@ This install the package in development mode, making it importable globally and 
 you to edit the code and directly use the updated version.
 
 .. _Tox: https://tox.readthedocs.io/en/latest/
-.. _`MAICoS develop project` : https://github.com/maicos-devel/maicos
+.. _`MAICoS develop project` : https://github.com/atomistic-lab/maicos
 
 Useful developer scripts
 ------------------------
